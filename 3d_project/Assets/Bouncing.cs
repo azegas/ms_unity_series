@@ -20,8 +20,8 @@ public class Bouncing : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.tag == "Floor")
+        // TODO don't bounce, but let the player die instead when it falls on this floor
+        if (collision.gameObject.CompareTag("Floor"))
         {
             Debug.Log("landed on the floor");
             rb.AddForce(force);
