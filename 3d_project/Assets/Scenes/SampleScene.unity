@@ -547,6 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4f074381a369d4d8a80bfa834eeeda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editRotation: {x: 0, y: 50, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

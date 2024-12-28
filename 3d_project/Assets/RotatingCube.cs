@@ -15,26 +15,22 @@ public class RotatingCube : MonoBehaviour
   
         // assign current active keyboard to kayboard variable
         keyboard = Keyboard.current;
-
-        if (keyboard != null)
-        {
-            Debug.Log($"Keyboard detected: {keyboard}.");
-        }
-        else
-        {
-            Debug.Log($"No keyboard detected: {keyboard}.");
-            return;
-        }
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (keyboard is null)
+        {
+            Debug.Log("No keyboard detected");
+            return;
+        }
+
         if (keyboard.wKey.isPressed)
         {
-            Debug.Log("w key is pressed");
+            // rotate the cube by x amount(set in the UI) rotation units per second and not by frame
+            transform.Rotate(editRotation * Time.deltaTime);
+            Debug.Log($"updated cube's rotation to - {transform.rotation}");
         }
-        transform.Rotate(editRotation);
     }
 }
