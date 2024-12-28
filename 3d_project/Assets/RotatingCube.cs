@@ -6,6 +6,7 @@ public class RotatingCube : MonoBehaviour
     void Start()
     {
         Debug.Log("Hello World!");
+        transform.Rotate(0, 45, 0);
     }
 
     // Update is called once per frame
