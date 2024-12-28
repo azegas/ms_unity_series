@@ -12,15 +12,19 @@ public class RotatingCube : MonoBehaviour
     // declare startPosition as a class-level variable
     private Vector3 startPosition;
 
+    // declare a speed variable - one unit per second
+    public float speed = 1.0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Debug.Log("Hello World!");
 
-        startPosition = transform.position;
-
         // assign current active keyboard to kayboard variable
         keyboard = Keyboard.current;
+
+        startPosition = transform.position;
+
     }
 
     // Update is called once per frame
@@ -32,31 +36,30 @@ public class RotatingCube : MonoBehaviour
             return;
         }
 
-        
         if (keyboard.wKey.isPressed)
         {
-            transform.position += new Vector3(0, 0, 1);
+            transform.position += new Vector3(0, 0, 1) * speed * Time.deltaTime;
             Debug.Log("W is pressed");
-            Debug.Log($"updated cube's position to - {transform.position}");
-        }
-
-        if (keyboard.sKey.isPressed)
-        {
-            transform.position += new Vector3(0, 0, -1);
-            Debug.Log("S is pressed");
             Debug.Log($"updated cube's position to - {transform.position}");
         }
 
         if (keyboard.aKey.isPressed)
         {
-            transform.position += new Vector3(1, 0, 0);
+            transform.position += new Vector3(1, 0, 0) * speed * Time.deltaTime;
             Debug.Log("A is pressed");
+            Debug.Log($"updated cube's position to - {transform.position}");
+        }
+
+        if (keyboard.sKey.isPressed)
+        {
+            transform.position += new Vector3(0, 0, -1) * speed * Time.deltaTime;
+            Debug.Log("S is pressed");
             Debug.Log($"updated cube's position to - {transform.position}");
         }
 
         if (keyboard.dKey.isPressed)
         {
-            transform.position += new Vector3(-1, 0, 0);
+            transform.position += new Vector3(-1, 0, 0) * speed * Time.deltaTime;
             Debug.Log("D is pressed");
             Debug.Log($"updated cube's position to - {transform.position}");
         }
