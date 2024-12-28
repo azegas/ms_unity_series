@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class RotatingCube : MonoBehaviour
+public class Moving : MonoBehaviour
 {
     public Keyboard keyboard;
     public Vector3 startPosition;
@@ -12,7 +12,7 @@ public class RotatingCube : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log("Hello World!");
+        Debug.Log("Moving component init");
 
         // assign current active keyboard to kayboard variable
         keyboard = Keyboard.current;
