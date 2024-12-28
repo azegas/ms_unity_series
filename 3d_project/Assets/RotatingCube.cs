@@ -74,5 +74,10 @@ public class RotatingCube : MonoBehaviour
             transform.Rotate(editRotation * Time.deltaTime);
             Debug.Log($"updated cube's rotation to - {transform.rotation}");
         }
+
+        if (keyboard.spaceKey.isPressed)
+        {
+            transform.position += new Vector3(0, 1, 0) * speed * Time.deltaTime;
+        }
     }
 }
