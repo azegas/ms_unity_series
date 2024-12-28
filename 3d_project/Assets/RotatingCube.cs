@@ -3,17 +3,11 @@ using UnityEngine.InputSystem;
 
 public class RotatingCube : MonoBehaviour
 {
+    public Keyboard keyboard;
+    public Vector3 startPosition;
     public Vector3 editRotation;
     public Vector3 editPosition;
-
-    // create a public variable for a keyboard
-    public Keyboard keyboard;
-
-    // declare startPosition as a class-level variable
-    private Vector3 startPosition;
-
-    // declare a speed variable - one unit per second
-    public float speed = 1.0f;
+    public int speed = 5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
